@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="RamerDouglasPeucker.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="RamerDouglasPeucker.js"></script>
+</head>
+<body>
+    <div id="main-content">
+        <header>Ramer-Douglas-Peucker Algorithm Example</header>
+
+        <div id="content-container">
+            <div id="heading">
+                Number of points (must be in range of 2 and 10,000):
+                <input id="num-points" type="number" placeholder="100">
+                <button id="make-chart">Make Chart</button>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="chart1"></canvas>
+            </div>
+
+            <div id="slider-container">
+                <input id="slider" type="range" min="0.1" max="100" value="0.1" step="0.1" class="slider">
+                <span>ε</span>
+                <input id="epsilon" type="number" value="0.1"></input>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
