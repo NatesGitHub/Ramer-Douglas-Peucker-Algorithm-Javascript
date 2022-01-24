@@ -111,11 +111,11 @@ function generateRandPoints(numPoints, xCeiling, yCeiling) {
  * 
  * @return {Object}
  */
-function makeChartConfig(labels, dataPairs, color = '#f86485') {
+function makeChartConfig(labels, dataPairs, color = '#f86485', chartLabel) {
     let data = {
         labels: labels,
         datasets: [{
-            label: 'Without RDP Tolerance',
+            label: chartLabel,
             backgroundColor: color,
             borderColor: color,
             data: dataPairs
@@ -174,11 +174,11 @@ window.onload = function() {
 
             chart1 = new Chart(
                 document.getElementById('chart1'),
-                makeChartConfig(chartData[0], chartData[1], 'rgb(255, 99, 132)')
+                makeChartConfig(chartData[0], chartData[1], 'rgb(255, 99, 132)', 'Without RDP Tolerance')
             );
             chart2 = new Chart(
                 document.getElementById('chart2'),
-                makeChartConfig(chartData[0], rdp(chartData[1], epsilon.value), '#2e51c7')
+                makeChartConfig(chartData[0], rdp(chartData[1], epsilon.value), '#2e51c7', 'With RDP Tolerance')
             );
         }
         else {
@@ -240,7 +240,7 @@ window.onload = function() {
 
             chart2 = new Chart(
                 document.getElementById('chart2'),
-                makeChartConfig(chartData[0], rdp(chartData[1], epsilon.value), '#2e51c7')
+                makeChartConfig(chartData[0], rdp(chartData[1], epsilon.value), '#2e51c7', 'With RDP Tolerance')
             );
         }
     }
