@@ -1,13 +1,13 @@
 /**
- * Decimate a curve of line segment connected points to a similar;y shaped curve with fewer points.
+ * Decimate a curve of line segment connected points to a similarly shaped curve with fewer points.
  * Reference: https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm
  * 
  * @param {2D Array} points            An array of '[x, y]' points. 
- * @param {Number}   episilonTolerance The tolerance at which a point is removed from the line segment.
+ * @param {Number}   epsilonTolerance The tolerance at which a point is removed from the line segment.
  * 
  * @return {2D Array}
  */
-function rdp(points, episilonTolerance) {
+function rdp(points, epsilonTolerance) {
     let maxDist = 0;
     let index = 0;
 
@@ -20,8 +20,8 @@ function rdp(points, episilonTolerance) {
         }
     }
 
-    if (maxDist > episilonTolerance) {
-        return [...rdp(points.slice(0, index), episilonTolerance), ...rdp(points.slice(index, points.length), episilonTolerance)];
+    if (maxDist > epsilonTolerance) {
+        return [...rdp(points.slice(0, index), epsilonTolerance), ...rdp(points.slice(index, points.length), epsilonTolerance)];
     }
 
     return [points[0], points[points.length - 1]];
