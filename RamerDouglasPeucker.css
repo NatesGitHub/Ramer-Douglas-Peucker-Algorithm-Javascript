@@ -18,12 +18,21 @@ html, body {
 
     height: 100%;
     width: 100%;
+
+    min-width: 795px;
 }
 
 header {
     font-family: 'Syne Mono', monospace;
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-height: 915px) {
+    header {
+        display: none;
+    }
 }
 
 #content-container {
@@ -36,6 +45,8 @@ header {
 
     height: 85%;
     width: 90%;
+
+    min-height: 750px;
 
     -moz-box-shadow: 0 0 10px gray;
     -webkit-box-shadow: 0 5px 10px gray;
@@ -103,10 +114,11 @@ button {
     font-family: 'Space-Mono', monospace;
     font-size: 30px;
 
-    height: 40px;
-
     margin-left: auto;
-    padding: 20px;
+    padding-bottom: 2.5px;
+    padding-top: 2.5px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 button:hover {
